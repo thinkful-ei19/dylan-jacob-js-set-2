@@ -1,8 +1,5 @@
 function jediName(firstName, lastName) {
-    let lastNameArr = lastName.split('');
-    let firstNameArr = firstName.split('');
-    return lastNameArr[0] + lastNameArr[1] + lastNameArr[2]
-    + firstName[0] + firstName[1];
+    console.log(lastName.slice(0, 3) + firstName.slice(0, 2));
 }
 
 jediName("jacob", "zimmerman");
