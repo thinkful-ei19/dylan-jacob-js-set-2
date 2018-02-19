@@ -44,4 +44,50 @@ function decode(word) {
     }
 }
 
-decode("craft");
+// decode("craft");
+
+/////////////////////////////
+
+
+function daysInMonth(month, leapYear) {
+    const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+
+    for (let i = 0; i < months.length; i++) {
+        if (month.toLowerCase() === months[i]) {
+            switch (month) {
+                case 'january':
+                case 'march':
+                case 'may':
+                case 'july':
+                case 'august':
+                case 'october':
+                case 'december':
+                    return `${month} has 31 days`;
+                    break;
+        
+                case 'april':
+                case 'june':
+                case 'september':
+                case 'november':
+                    return `${month} has 30 days`;
+                    break;
+                    
+                case 'february':
+                    if (leapYear) {
+                        return `${month} has 29 days`;
+                        break;
+                    } else {
+                        return `${month} has 28 days`;
+                        break;
+                    }
+            }
+        }
+    }
+
+    return `Must provide a valid month`;
+
+    
+}
+
+console.log(daysInMonth('february', true));
+
